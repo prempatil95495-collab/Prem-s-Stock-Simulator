@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PREM'S Stockmarket</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>📈 PREM'S Stockmarket</h1>
+  <p>Virtual Trading Competition</p>
+
+  <div class="card">
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="register()">Start Trading</button>
+  </div>
+</div>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
