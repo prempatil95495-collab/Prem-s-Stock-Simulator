@@ -1,0 +1,21 @@
+function loadDashboard() {
+  const user = localStorage.getItem("user");
+
+  db.collection("users").doc(user)
+    .onSnapshot(async (doc) => {
+      const data = doc.data();
+
+      document.getElementById("balance").innerText =
+        "Balance: ₹" + data.balance;
+
+      let portfolioHTML = "";
+
+      for (let stock in data.portfolio) {
+        portfolioHTML += `<p>${stock}: ${data.portfolio[stock]}</p>`;
+      }
+
+      document.getElementById("portfolio").innerHTML = portfolioHTML;
+    });
+}
+
+loadDashboard();
