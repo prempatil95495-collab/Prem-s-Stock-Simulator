@@ -1,0 +1,47 @@
+async function register() {
+  const name = document.getElementById("name").value.trim();
+
+  if (!name) {
+    alert("Enter name");
+    return;
+  }
+
+  const userRef = db.collection("users").doc(name);
+
+  const doc = await userRef.get();
+
+  if (!doc.exists) {
+    await userRef.set({
+      name: name,
+      balance: 1000000,
+      portfolio: {},
+      createdAt: Date.now()
+    });
+  }
+
+  localStorage.setItem("user", name);
+  window.location.href = "dashboard.html";
+}async function register() {
+  const name = document.getElementById("name").value.trim();
+
+  if (!name) {
+    alert("Enter name");
+    return;
+  }
+
+  const userRef = db.collection("users").doc(name);
+
+  const doc = await userRef.get();
+
+  if (!doc.exists) {
+    await userRef.set({
+      name: name,
+      balance: 1000000,
+      portfolio: {},
+      createdAt: Date.now()
+    });
+  }
+
+  localStorage.setItem("user", name);
+  window.location.href = "dashboard.html";
+}
