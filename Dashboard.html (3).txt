@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>📊 Trading Dashboard</h2>
+
+<div id="balance"></div>
+
+<div class="trade-box">
+  <input id="stock" placeholder="Stock (e.g. AAPL)">
+  <input id="qty" type="number" placeholder="Qty">
+  <button onclick="buy()">Buy</button>
+  <button onclick="sell()">Sell</button>
+</div>
+
+<h3>Your Portfolio</h3>
+<div id="portfolio"></div>
+
+<h3>🏆 Leaderboard</h3>
+<div id="leaderboard"></div>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
